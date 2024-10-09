@@ -48,8 +48,7 @@ class PokemonApp():
     def get_pokemons_from_api(self) -> list[str]:
         return self.pokemon_api.get_all_pokemons()
     
-    @classmethod
-    def display_pokemon(pokemon)-> None:
+    def display_pokemon(self,pokemon)-> None:
         pokemon_id = colored(f"ID: {pokemon.id}", 'cyan', attrs=['bold'])
         pokemon_name = colored(f"Name: {pokemon.name.capitalize()}", 'yellow', attrs=['bold', 'underline'])
         abilities_title = colored("Abilities:", 'green', attrs=['bold'])
@@ -62,12 +61,12 @@ class PokemonApp():
         print(f"{pokemon_id}\n{pokemon_name}\n{abilities_title} {abilities}")
         print(f'{fancy_line}')
         
-    @classmethod
-    def pick_random_pokemon(pokemons) -> str:
+    
+    def pick_random_pokemon(self,pokemons) -> str:
         return random.choice(pokemons)
     
-    @classmethod
-    def get_user_choice():
+    
+    def get_user_choice(self):
         valid_choices = ['y','n']
         
         while True:
@@ -75,8 +74,7 @@ class PokemonApp():
             if choice in valid_choices:
                 return choice
             
-    @classmethod
-    def farewell_greeting():
+    def farewell_greeting(self):
         fancy_line = colored("*" * 50, 'cyan', attrs=['bold', 'blink'])
         greeting_line = colored("★ Farewell, may your journey be bright and your heart full ★", 'yellow', attrs=['bold', 'underline', 'blink'])
         see_you_line = colored("☆ See you again soon! ☆", 'magenta', attrs=['bold', 'underline'])
